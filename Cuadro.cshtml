@@ -1,0 +1,21 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title> Cuadro de Ventas</title>
+    </head>
+    <body>
+        @{
+var myChart = new Chart(width: 600, height: 400)
+   .AddTitle("Ventas")
+   .AddSeries(chartType: "column",
+      xValue: new[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo" },
+      yValues: new[] { "3", "4", "6", "8", "9" })
+   .Write();
+}
+    </body>
+</html>
+
+

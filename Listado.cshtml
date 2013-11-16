@@ -1,0 +1,32 @@
+﻿@{
+    Page.Title = "Inicio";
+
+    var db = Database.Open("bakery");
+    var query = db.Query("SELECT * FROM PRODUCTS").ToList();
+  
+}
+
+<html> 
+<body> 
+<h1>Listado de Precios de Productos </h1> 
+<table border="1" width="100%"> 
+<tr>
+<th>Codigo</th> 
+<th>Producto</th> 
+<th>Description</th> 
+<th>Precio</th> 
+</tr>
+
+ @foreach (var row in query)
+{
+<tr> 
+<td>@row.Id</td> 
+<td>@row.Name</td> 
+<td>@row.Description</td> 
+<td align="right">@row.Price</td>
+ 
+</tr> 
+}
+</table> 
+</body> 
+</html> 
